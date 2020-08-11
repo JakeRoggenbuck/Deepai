@@ -14,14 +14,13 @@ deep = Deep(key, url, file, path)
 deep.download()
 ```
 
-## Example
-![Example image](https://github.com/JakeRoggenbuck/Deepai/blob/master/images/34d5700d-73e2-4d2c-99f7-9ecbd125e68c.jpg?raw=true)
-
 ## Config
-Make the config and get an api key at ![deepai,org](https://deepai.org)
+Make the config and get an api key at [deepai.org](https://deepai.org)
 `config.py`
 ```
 KEY = "API-KEY"
 URL = "https://api.deepai.org/api/deepdream"
 ```
 
+## Example
+![Example image](https://github.com/JakeRoggenbuck/Deepai/blob/master/images/34d5700d-73e2-4d2c-99f7-9ecbd125e68c.jpg?raw=true)
