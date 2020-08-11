@@ -11,4 +11,5 @@ file = "image.png"
 path = "images/"
 
 deep = Deep(key, url, file, path)
+deep.download()
 ```
