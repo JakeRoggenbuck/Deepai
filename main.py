@@ -5,10 +5,12 @@ import argparse
 
 
 class Deep:
-    def __init__(self, key, url, image):
+    def __init__(self, key, url, image, path="./"):
         self.key = key
         self.url = url
         self.image = image
+        self.fileext = image.split('.')[-1]
+        self.path = path
 
     def get_image(self):
         image = open(self.image, 'rb')
@@ -23,14 +25,15 @@ class Deep:
     def get_url(self):
         r = self.request()
         image_json = r.json()
-        return image_json["output_url"]
+        return image_json["output_url"], image_json["id"]
 
     def download(self):
-        url = self.get_url()
-        local_filename = url.split("/")[-1]
+        json = self.get_url()
+        url = json[0]
+        name = json[1]
         with requests.get(url, stream=True) as r:
             r.raise_for_status()
-            with open(f"{local_filename}", "wb+") as f:
+            with open(f"{self.path}{name}.{self.fileext}", "wb+") as f:
                 for chunk in tqdm(r.iter_content(chunk_size=8192)):
                     if chunk:
                         f.write(chunk)
@@ -41,5 +44,5 @@ if __name__ == "__main__":
     parser.add_argument("-f", help="File name")
     args = parser.parse_args()
     IMAGE = args.f
-    deep = Deep(config.KEY, config.URL, IMAGE)
+    deep = Deep(config.KEY, config.URL, IMAGE, 'images/')
     deep.download()
