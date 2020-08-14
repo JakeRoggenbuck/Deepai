@@ -2,7 +2,7 @@
 
 ## Use
 
-```
+```py
 from main import Deep
 
 key = "api-key"
@@ -17,7 +17,7 @@ deep.download()
 ## Config
 Make the config and get an api key at [deepai.org](https://deepai.org)
 `config.py`
-```
+```py
 KEY = "API-KEY"
 URL = "https://api.deepai.org/api/deepdream"
 ```
