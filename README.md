@@ -2,6 +2,8 @@
 
 ## Use
 
+Run `python3 main.py -f filename.png`
+
 ```py
 from main import Deep
 

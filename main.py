@@ -43,6 +43,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", help="File name")
     args = parser.parse_args()
-    IMAGE = args.f
-    deep = Deep(config.KEY, config.URL, IMAGE, 'images/')
-    deep.download()
+    if args.f is not None:
+        IMAGE = args.f
+        deep = Deep(config.KEY, config.URL, IMAGE, 'images/')
+        deep.download()
