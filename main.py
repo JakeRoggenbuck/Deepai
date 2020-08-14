@@ -5,7 +5,7 @@ import argparse
 
 
 class Deep:
-    def __init__(self, key, url, image, path="./"):
+    def __init__(self, key: str, url: str, image: int, path="./"):
         self.key = key
         self.url = url
         self.image = image
@@ -18,8 +18,8 @@ class Deep:
 
     def request(self):
         r = requests.post(self.url,
-            files={'image': self.get_image()},
-            headers={'api-key': self.key})
+                          files={'image': self.get_image()},
+                          headers={'api-key': self.key})
         return r
 
     def get_url(self):
