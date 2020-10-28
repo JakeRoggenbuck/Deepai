@@ -35,7 +35,7 @@ KEY = "API-KEY"
 urls:
     - DeepDream: "https://api.deepai.org/api/deepdream"
     - Colorizer: "https://api.deepai.org/api/colorizer"
-	- NeuralStyle: "https://api.deepai.org/api/neural-style"
+    - NeuralStyle: "https://api.deepai.org/api/neural-style"
 
 ```
 
