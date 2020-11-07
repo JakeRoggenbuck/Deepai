@@ -2,17 +2,7 @@ import requests
 from tqdm import tqdm
 import argparse
 import yaml
-
-
-class Config:
-    def __init__(self, path: str = "./config.yml"):
-        self.path = path
-        self.config = self.get_config()
-
-    def get_config(self):
-        config_file = open(self.path)
-        config = yaml.load(config_file, Loader=yaml.FullLoader)
-        return config
+from jakesutils.config import Config
 
 
 class DeepImage:
@@ -21,7 +11,7 @@ class DeepImage:
         self.output_file = output_file
         self.style_name = style_name
         self.style_image = style_image
-        self.config = Config()
+        self.config = Config("config.yml", "yaml")
 
     def read_image(self, image):
         return open(image, "rb")
