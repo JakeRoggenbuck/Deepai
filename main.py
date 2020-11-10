@@ -1,8 +1,8 @@
+import argparse
+from jakesutils.config import Config
 import requests
 from tqdm import tqdm
-import argparse
 import yaml
-from jakesutils.config import Config
 
 
 class DeepImage:
