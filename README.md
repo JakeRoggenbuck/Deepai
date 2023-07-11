@@ -3,10 +3,14 @@ Use the deepdream API and other APIs from deepai to convert, upscale, and change
 
 ## Use
 
-Run `p main.py -i ~/Downloads/input_image.jpg -o image.png -n NeuralStyle -s ~/Downloads/vangohg.png`
-Run `p main.py -i ~/Downloads/input_image.jpg -o image.png -n DeepDream`
+#### Use as CLI
+```
+python3 main.py -i ~/Downloads/input_image.jpg -o image.png -n NeuralStyle -s ~/Downloads/vangohg.png
 
+python3 main.py -i ~/Downloads/input_image.jpg -o image.png -n DeepDream
+```
 
+#### Use as library
 ```py
 from main import DeepImage
 
